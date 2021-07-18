@@ -20,8 +20,9 @@ Route::get('/', function () {
 });
 
 Route::get('hello/single', 'SingleController');
+
+Route::get('hello', 'HelloController@index');
 Route::post('hello', 'HelloController@post');
 
-Route::get('hello', 'HelloController@index')->middleware('hello');
 
 
