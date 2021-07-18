@@ -22,6 +22,6 @@ Route::get('/', function () {
 Route::get('hello/single', 'SingleController');
 Route::post('hello', 'HelloController@post');
 
-Route::get('hello', 'HelloController@index')->middleware(HelloMiddleware::class);
+Route::get('hello', 'HelloController@index')->middleware('hello');
 
 
