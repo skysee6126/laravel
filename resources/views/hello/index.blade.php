@@ -8,15 +8,17 @@
 </head>
 <body>
     <h1>Blade/Index</h1>
-    @isset ($msg)
-      <p>Hello, {{ $msg }}</p>
-    @else
-    <p>please fill out your name</p>
-    @endisset
-      <form method="POST" action="/hello">
-      @csrf
-      <input type="text" name="msg">
-      <input type="submit">
-    </form>
+    <p>&#064;for derective</p>
+    <ol>
+    @foreach($data as $item)
+    @if ($loop->first)
+    <p>*Data list</p><ul>
+    @endif
+      <li>No, {{ $loop->iteration }}.{{ $item }}</li>
+    @if ($loop->last)
+  </ul><p>Until this line</p>
+    @endif
+    @endforeach
+  </ol>
 </body>
 </html>
