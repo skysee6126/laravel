@@ -18,6 +18,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('hello/single', 'SingleController');
 
 Route::get('hello', 'HelloController@index');
-Route::get('hello/single', 'SingleController');
