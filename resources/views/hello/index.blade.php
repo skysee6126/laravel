@@ -8,11 +8,8 @@
 
 @section('content')
   <p>This is content</p>
-  <table>
-    @foreach($data as $item)
-    <tr><th>{{ $item['name'] }}</th><td>{{ $item['email'] }}</td></tr>
-    @endforeach
-  </table>
+    <p>This is a link for <middleware>google.com</middleware></p>
+    <p>This is a link for <middleware>yahoo.com</middleware></p>
   @endsection
 
 @section('footer')
