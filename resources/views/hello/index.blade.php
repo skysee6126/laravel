@@ -8,9 +8,12 @@
 
 @section('content')
   <p>This is content</p>
-  <p>Controller value<br>'message' = {{ $message}}</p>
-  <p>ViewComposer value<br>'view_message' = {{ $view_message }}</p>
-@endsection
+  <table>
+    @foreach($data as $item)
+    <tr><th>{{ $item['name'] }}</th><td>{{ $item['email'] }}</td></tr>
+    @endforeach
+  </table>
+  @endsection
 
 @section('footer')
   copyright 2020 tuyano.
