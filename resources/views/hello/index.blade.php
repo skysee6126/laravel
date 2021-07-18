@@ -8,11 +8,10 @@
 
 @section('content')
   <p>This is content</p>
-
-  @include('components.message', ['msg_title'=>'OK',
-    'msg_content'=>'This is sub-view'])
-
-    @endsection
+  <ul>
+  @each('components.item', $data, 'item')
+  </ul>
+@endsection
 
 @section('footer')
   copyright 2020 tuyano.
