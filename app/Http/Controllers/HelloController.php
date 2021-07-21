@@ -6,17 +6,27 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Http\Requests\HelloRequest;
 use Validator;
+use Illuminate\Support\Facades\DB;
 
 class HelloController extends Controller
 {
     public function index(Request $request) {
 
-        return view('hello.index', ['msg'=>'please fill out the form' ]);
+        $items = DB::select('select * from people');
+        return view('hello.index', ['items'=>$items]);
     }
 
-    public function post(HelloRequest $request)
+    public function post(Request $request)
     {
-        return view('hello.index', ['msg'=>'there is no issue!']);
+        $validate_rule = [
+            'msg' => 'required',
+        ];
+        $this->validate($request, $validate_rule);
+        $msg = $request->msg;
+        $response = response()->view('hello.index', 
+            ['msg'=> '['.$msg.'] is saved on Cookie.']);
+        $response->cookie('msg', $msg, 100);
+        return $response;
     }
 
 }

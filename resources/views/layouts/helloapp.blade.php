@@ -9,6 +9,8 @@
     .menutitle { font-size:14pt; font-weight:bold; margin: 0px; }
     .content { margin:10px; }
     .footer { font-size:10pt; text-align:right; color: #ccc; margin: 10px; border-bottom:solid 1px #ccc; }
+    th { background-color: #999; color: fff; padding: 5px 10px; }
+    td { border: solid 1px #aaa; color: #999; padding: 5px 10px; }
   </style>
 </head>
 <body>
