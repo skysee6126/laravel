@@ -23,14 +23,14 @@ class PeopleTableSeeder extends Seeder
 
         $param = [
             'name' => 'hana',
-            'hana' => 'hana@taro.jp',
+            'mail' => 'hana@taro.jp',
             'age' => 32,
         ];
         DB::table('people')->insert($param);
 
         $param = [
             'name' => 'mako',
-            'mako' => 'mako@taro.jp',
+            'mail' => 'mako@taro.jp',
             'age' => 24,
         ];
         DB::table('people')->insert($param);
