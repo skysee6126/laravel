@@ -12,7 +12,7 @@ class HelloController extends Controller
 {
     public function index(Request $request) {
 
-        $items = DB::select('select * from people');
+        $items = DB::table('people')->get();
         return view('hello.index', ['items'=>$items]);
     }
     
@@ -20,6 +20,16 @@ class HelloController extends Controller
         
         $items = DB::select('select * from people');
         return view('hello.index', ['items'=>$items]);
+    }
+
+    public function show(Request $request)
+    {
+        $name = $request->name;
+        $items = DB::table('people')
+            ->where('name', 'like', '%'.$name.'%')
+            ->orWhere('mail', 'like', '%'.$name.'%')
+            ->get();
+        return view('hello.show', ['items'=>$items]);
     }
 
     public function add(Request $request) {
